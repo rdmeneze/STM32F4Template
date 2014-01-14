@@ -5,6 +5,8 @@ template for some STM32F4 periphericals for STM32F407 using Keil CC compiler.
 
 This module depends strongly of STM32F4 Peripheral Library V1.1.0
 
+The last version of STM32F4 Peripheral Library is present in http://www.st.com/web/en/catalog/tools/PF257901
+
 - implement the RTC code and put support for libc time functions
 - put support to nand flash memory
 - put support to log functionalities
