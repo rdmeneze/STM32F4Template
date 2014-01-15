@@ -30,6 +30,7 @@
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
           <SFDFile>SFD\ST\STM32F4xx\STM32F40x.sfr</SFDFile>
+          <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
           <IncludePath></IncludePath>
@@ -97,6 +98,7 @@
           <StopOnExitCode>3</StopOnExitCode>
           <CustomArgument></CustomArgument>
           <IncludeLibraryModules></IncludeLibraryModules>
+          <ComprImg>1</ComprImg>
         </CommonProperty>
         <DllOption>
           <SimDllName>SARMCM3.DLL</SimDllName>
@@ -169,6 +171,10 @@
           <Flash2>BIN\UL2CM3.DLL</Flash2>
           <Flash3></Flash3>
           <Flash4></Flash4>
+          <pFcarmOut></pFcarmOut>
+          <pFcarmGrp></pFcarmGrp>
+          <pFcArmRoot></pFcArmRoot>
+          <FcArmLst>0</FcArmLst>
         </Utilities>
         <TargetArmAds>
           <ArmAdsMisc>
@@ -348,8 +354,8 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <VariousControls>
-              <MiscControls></MiscControls>
-              <Define>USE_STDPERIPH_DRIVER</Define>
+              <MiscControls>--c99</MiscControls>
+              <Define>USE_STDPERIPH_DRIVER,STM32F40XX</Define>
               <Undefine></Undefine>
               <IncludePath>.;.\inc;..\lib\STM32F4xx_DSP_StdPeriph_Lib_V1.1.0\Libraries\CMSIS\Include;..\lib\STM32F4xx_DSP_StdPeriph_Lib_V1.1.0\Libraries\STM32F4xx_StdPeriph_Driver\inc</IncludePath>
             </VariousControls>
@@ -412,6 +418,56 @@
               <FileType>5</FileType>
               <FilePath>.\inc\timer.h</FilePath>
             </File>
+            <File>
+              <FileName>dev_leds.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\inc\dev_leds.h</FilePath>
+            </File>
+            <File>
+              <FileName>dev_relays.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\inc\dev_relays.h</FilePath>
+            </File>
+            <File>
+              <FileName>device.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\inc\device.h</FilePath>
+            </File>
+            <File>
+              <FileName>errno.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\inc\errno.h</FilePath>
+            </File>
+            <File>
+              <FileName>perip_prefix.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\inc\perip_prefix.h</FilePath>
+            </File>
+            <File>
+              <FileName>system_timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\inc\system_timer.h</FilePath>
+            </File>
+            <File>
+              <FileName>uniquecount.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\inc\uniquecount.h</FilePath>
+            </File>
+            <File>
+              <FileName>usart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\inc\usart.h</FilePath>
+            </File>
+            <File>
+              <FileName>utils.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\inc\utils.h</FilePath>
+            </File>
+            <File>
+              <FileName>watchdog.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\inc\watchdog.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -436,6 +492,71 @@
               <FileName>timer.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>dev_leds.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\dev_leds.c</FilePath>
+            </File>
+            <File>
+              <FileName>dev_relays.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\dev_relays.c</FilePath>
+            </File>
+            <File>
+              <FileName>device.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\device.c</FilePath>
+            </File>
+            <File>
+              <FileName>SVC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\SVC.c</FilePath>
+            </File>
+            <File>
+              <FileName>system_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\system_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>uniquecount.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\uniquecount.c</FilePath>
+            </File>
+            <File>
+              <FileName>usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>watchdog.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\watchdog.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\lib\STM32F4xx_DSP_StdPeriph_Lib_V1.1.0\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\lib\STM32F4xx_DSP_StdPeriph_Lib_V1.1.0\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>misc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\lib\STM32F4xx_DSP_StdPeriph_Lib_V1.1.0\Libraries\STM32F4xx_StdPeriph_Driver\src\misc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_wwdg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\lib\STM32F4xx_DSP_StdPeriph_Lib_V1.1.0\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_wwdg.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_rcc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\lib\STM32F4xx_DSP_StdPeriph_Lib_V1.1.0\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.c</FilePath>
             </File>
           </Files>
         </Group>
