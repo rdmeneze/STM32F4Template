@@ -17,6 +17,8 @@ The last version of STM32F4 Peripheral Library is present in http://www.st.com/w
   - implement WebServices to notify the clients about changes os internal state of operation 
 - implement support to CC3000 wireless Wi-Fi dongle
 - implement support to USB Host
+- implement SPI hardware interface using STM32F4 Peripheral Library
+
 
 
 

@@ -468,6 +468,11 @@
               <FileType>5</FileType>
               <FilePath>.\inc\watchdog.h</FilePath>
             </File>
+            <File>
+              <FileName>spi_hw.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\inc\spi_hw.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -557,6 +562,21 @@
               <FileName>stm32f4xx_rcc.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\lib\STM32F4xx_DSP_StdPeriph_Lib_V1.1.0\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\lib\STM32F4xx_DSP_StdPeriph_Lib_V1.1.0\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>New Group</GroupName>
+          <Files>
+            <File>
+              <FileName>README.md</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\README.md</FilePath>
             </File>
           </Files>
         </Group>
