@@ -12,9 +12,9 @@ typedef enum
 } TSysTimerType;
 
 /**
- *	@brief			Initialize the system timer
+ *	@brief      Initialize the system timer
  *	@param[in]	dwTimeMicro system tick interval in microseconds
- *	@return			success or fail
+ *	@return     success or fail
  */
 uint32_t SysTimerInit( uint32_t dwTimeMicro );
 
