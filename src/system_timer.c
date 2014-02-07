@@ -15,12 +15,12 @@
 
 typedef struct _STSYSTEMTIMERCB
 {
-	int32_t 							magic;						//! magic number
-	uint32_t 							handle;						//!	handle to timer structure 
-	int32_t 							count;						//!	actual count
-	int32_t 							countTime;				//! the reload time
-	TSysTimerType					type;							//! type of timer: 	systemTimerOneShot or systemTimerRetriggerable 
-	void*									lpParam;					//! param passed in register function
+	int32_t         magic;						//! magic number
+	uint32_t        handle;						//!	handle to timer structure 
+	int32_t         count;						//!	actual count
+	int32_t         countTime;				//! the reload time
+	TSysTimerType   type;							//! type of timer: 	systemTimerOneShot or systemTimerRetriggerable 
+	void*           lpParam;					//! param passed in register function
 	callbacktimer_func 		callback_func;		//! callback function address
 }STSystemTimerCB;
 
@@ -89,17 +89,17 @@ uint32_t SystemTimerRegisterCallBack( int32_t delay, TSysTimerType type, callbac
 		count++;
 	
 	for ( ptrTimerCB = &vecSystemTimerCB[0], i = 0; i < VECTOR_LEN( vecSystemTimerCB ); i++, ptrTimerCB++)
-	{
-		if ( ptrTimerCB->handle == SYSTIMER_ENTRY_NULL )
-		{
-			ptrTimerCB->handle						= GetUniqueCount();
-			ptrTimerCB->countTime					=	count;
-			ptrTimerCB->count							= ptrTimerCB->countTime;
-			ptrTimerCB->callback_func			=	callback_func;
-			ptrTimerCB->lpParam						= lpParam;
-			ptrTimerCB->type							= type;
-			break;
-		}
+    {
+        if ( ptrTimerCB->handle == SYSTIMER_ENTRY_NULL )
+        {
+            ptrTimerCB->handle      =   GetUniqueCount();
+            ptrTimerCB->countTime   =   count;
+            ptrTimerCB->count       =   ptrTimerCB->countTime;
+            ptrTimerCB->callback_func   =	callback_func;
+            ptrTimerCB->lpParam         = lpParam;
+            ptrTimerCB->type            = type;
+            break;
+        }
 	}
 	
 	if ( i == VECTOR_LEN( vecSystemTimerCB ) )
@@ -163,7 +163,7 @@ void SysTick_Handler (void)
 	int	i;
 	STSystemTimerCB*	ptrVecTimerCB;
 	uint32_t	dwExecuteCBFlag = 0;
-	
+    	
 	for ( i = 0, ptrVecTimerCB = vecSystemTimerCB; i < VECTOR_LEN( vecSystemTimerCB ); i++, ptrVecTimerCB++  )
 	{
 		if ( ptrVecTimerCB->handle != SYSTIMER_ENTRY_NULL )
@@ -171,7 +171,7 @@ void SysTick_Handler (void)
 			ptrVecTimerCB->count--;
 			if ( !dwExecuteCBFlag )
 			{
-				if ( ptrVecTimerCB->count < 0 )
+				if ( ptrVecTimerCB->count <= 0 )
 				{
 					if ( ptrVecTimerCB->callback_func != NULL )
 					{
