@@ -1139,7 +1139,7 @@ uint32_t USARTSetBaudRate( TUsart * usart, BaudRate baud )
 	
 	usart->baud = baud;
 	
-	if ( usart->bInit == ENABLE )
+	if ( usart->bInit == 1 )
 	{
 		// initialize the usart structure
 		USART_StructInit( &USART_InitStruct );
@@ -1177,7 +1177,7 @@ uint32_t USARTSetParity( TUsart * usart, Parity pr )
 	usart->parity = pr;
 
 	// add the peripheral parity change code here: 
-	if ( usart->bInit == ENABLE )
+	if ( usart->bInit == 1 )
 	{
 		// initialize the usart structure
 		USART_InitTypeDef USART_InitStruct; 	// this is for the USART1 initilization
@@ -1216,7 +1216,7 @@ uint32_t USARTSetStopBits( TUsart * usart, StopBits st )
 	usart->stopBits = st;
     
 	// add the peripheral stop bits change code here: 
-	if ( usart->bInit == ENABLE )
+	if ( usart->bInit == 1 )
 	{
 		// initialize the usart structure
 		USART_InitTypeDef USART_InitStruct; 	// this is for the USART1 initilization
@@ -1301,7 +1301,7 @@ uint32_t USARTRegisterCallBack( TUsart* usart, callbackusart_func callback_func,
 	usart->dwFlags				|= (1 << flag);
 	
 	// add the peripheral interrupt function association here
-	if ( usart->bInit == ENABLE )
+	if ( usart->bInit == 1 )
 	{
 		for ( int i = F_CB_OVR; i <= F_CB_TXD; i++ )
 		{
@@ -1336,8 +1336,7 @@ uint32_t USARTUnregisterCallBack( TUsart* usart, UsartEvents flag )
 	usart->dwFlags		&= ~(1 << flag);
 	usart->callbackfunc[flag]	= NULL;
 
-
-	if ( usart->bInit == ENABLE )
+	if ( usart->bInit == 1 )
 	{
 		for ( int i = F_CB_OVR; i <= F_CB_TXD; i++ )
 		{
